@@ -13,21 +13,20 @@
 #include <stddef.h>
 /****************************************************************/
 
-
-/*!\enum enumcppQueueType
-** \brief cppQueue behavior enumeration (FIFO, LIFO)
-**/
-typedef enum enumcppQueueType {
-	FIFO = 0,	//!< First In First Out behavior
-	LIFO = 1	//!< Last In First Out behavior
-} cppQueueType;
-
-
 /*!	\class cppQueue
 **	\brief Class containing the required methods for handling the queue
 **/
 class cppQueue
 {
+public:
+	/*!\enum enumcppQueueType
+	** \brief cppQueue behavior enumeration (FIFO, LIFO)
+	**/
+	enum cppQueueType {
+		FIFO = 0,	//!< First In First Out behavior
+		LIFO = 1	//!< Last In First Out behavior
+	};
+
 private:
 	cppQueueType	impl;		//!< cppQueue implementation: FIFO LIFO
 	bool			ovw;		//!< Overwrite previous records when queue is full allowed
